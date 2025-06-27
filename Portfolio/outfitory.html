@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outfitory.shop Campaign Case Study</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      background-color: #111;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px #222;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .content {
+      padding: 40px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .graph-container {
+      max-width: 700px;
+      margin: 20px auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #222;
+    }
+    .medium-graph {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .highlight {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Campaign Case Study: <span class="highlight">Outfitory.shop</span></h1>
+    <p>Apparel Leads & Sales Campaign – Budget: $500</p>
+  </header>
+
+  <div class="content">
+    <div class="section">
+      <h2>Campaign Overview</h2>
+      <p>Outfitory Ltd. launched a campaign to generate quality leads and increase apparel product sales in <span class="highlight">USA and India</span>. The total spend was <span class="highlight">$500</span>, and the pricing strategy included <span class="highlight">CPL (Cost Per Lead)</span> and <span class="highlight">CPS (Cost Per Sale)</span> modules for performance marketing.</p>
+    </div>
+
+    <div class="section">
+      <h2>Campaign Strategy</h2>
+      <ul>
+        <li>Seasonal collection ads targeting fashion-conscious buyers.</li>
+        <li>Lead magnets with discount sign-up offers for CPL.</li>
+        <li>Product carousel ads on social platforms and Google Shopping.</li>
+        <li>Smart bidding optimization for high-value purchases.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Leads & Sales by Region</h2>
+      <div class="graph-container">
+        <canvas id="conversionChart"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Budget Allocation by Model</h2>
+      <div class="graph-container medium-graph">
+        <canvas id="budgetSplitChart"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Conclusion</h2>
+      <p>The campaign yielded strong results in India for CPL and stronger CPS value in the USA. With the dual pricing model, Outfitory Ltd. balanced customer acquisition with direct e-commerce sales performance, creating long-term brand value in both geographies.</p>
+    </div>
+  </div>
+
+  <script>
+    const conversionCtx = document.getElementById('conversionChart').getContext('2d');
+    new Chart(conversionCtx, {
+      type: 'bar',
+      data: {
+        labels: ['USA', 'India'],
+        datasets: [
+          {
+            label: 'Leads (CPL)',
+            data: [120, 190],
+            backgroundColor: '#00ffcc'
+          },
+          {
+            label: 'Sales (CPS)',
+            data: [80, 60],
+            backgroundColor: '#ffffff'
+          }
+        ]
+      },
+      options: {
+        plugins: {
+          legend: { labels: { color: 'white' } }
+        },
+        scales: {
+          x: { ticks: { color: 'white' }, grid: { color: '#333' } },
+          y: { ticks: { color: 'white' }, grid: { color: '#333' } }
+        }
+      }
+    });
+
+    const budgetCtx = document.getElementById('budgetSplitChart').getContext('2d');
+    new Chart(budgetCtx, {
+      type: 'pie',
+      data: {
+        labels: ['CPL', 'CPS'],
+        datasets: [{
+          data: [300, 200],
+          backgroundColor: ['#00ffcc', '#ffffff']
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { labels: { color: 'white' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

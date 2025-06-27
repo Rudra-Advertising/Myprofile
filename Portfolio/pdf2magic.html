@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF2Magic.com Campaign Case Study</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      background-color: #111;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px #222;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .content {
+      padding: 40px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .graph-container {
+      max-width: 700px;
+      margin: 20px auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #222;
+    }
+    .medium-graph {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .highlight {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Campaign Case Study: <span class="highlight">PDF2Magic.com</span></h1>
+    <p>Utility Tool Promotion – Budget: $150</p>
+  </header>
+
+  <div class="content">
+    <div class="section">
+      <h2>Campaign Overview</h2>
+      <p>PDF2Magic.com, a global PDF editing and conversion tool, ran a targeted campaign with a <span class="highlight">$150</span> budget on a <span class="highlight">CPC (Cost Per Click)</span> model. The goal was to increase global traffic and onboard freemium users through utility-related search and contextual ads.</p>
+    </div>
+
+    <div class="section">
+      <h2>Execution Strategy</h2>
+      <ul>
+        <li>Keyword targeting: “free PDF converter”, “edit PDF online”, “merge PDF tool”.</li>
+        <li>Ad distribution via Google Search and Display Network.</li>
+        <li>English-only campaigns targeting all devices globally.</li>
+        <li>Call-to-action: “Convert PDFs Instantly – No Sign-Up Required”.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Top Traffic Regions</h2>
+      <div class="graph-container">
+        <canvas id="trafficRegionChart"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Daily Click Growth</h2>
+      <div class="graph-container">
+        <canvas id="clickGrowthChart"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Conclusion</h2>
+      <p>Despite a small spend, PDF2Magic.com effectively reached users in need of a simple online PDF solution. The campaign recorded an increasing CTR trend across the week, with India, the US, and Philippines showing high interaction rates. CPC optimization kept costs minimal and conversion rates healthy.</p>
+    </div>
+  </div>
+
+  <script>
+    const trafficCtx = document.getElementById('trafficRegionChart').getContext('2d');
+    new Chart(trafficCtx, {
+      type: 'bar',
+      data: {
+        labels: ['India', 'United States', 'Philippines', 'Brazil', 'UK'],
+        datasets: [{
+          label: 'Clicks',
+          data: [160, 120, 80, 60, 30],
+          backgroundColor: '#00ffcc'
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: { ticks: { color: 'white' }, grid: { color: '#333' } },
+          y: { ticks: { color: 'white' }, grid: { color: '#333' } }
+        }
+      }
+    });
+
+    const clickCtx = document.getElementById('clickGrowthChart').getContext('2d');
+    new Chart(clickCtx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Daily Clicks',
+          data: [30, 45, 50, 55, 60, 65, 70],
+          borderColor: '#00ffcc',
+          backgroundColor: 'transparent',
+          tension: 0.4
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { labels: { color: 'white' } }
+        },
+        scales: {
+          x: { ticks: { color: 'white' }, grid: { color: '#333' } },
+          y: { ticks: { color: 'white' }, grid: { color: '#333' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

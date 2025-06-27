@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ohplay.club Campaign Case Study</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      background-color: #111;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px #222;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .content {
+      padding: 40px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .graph-container {
+      max-width: 700px;
+      margin: 20px auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #222;
+    }
+    .medium-graph {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .highlight {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Campaign Case Study: <span class="highlight">Ohplay.club</span></h1>
+    <p>Multi-Geo Performance Marketing – Budget: $1200</p>
+  </header>
+
+  <div class="content">
+    <div class="section">
+      <h2>Campaign Overview</h2>
+      <p>Ohplay.club launched a multi-geo advertising campaign targeting <span class="highlight">Canada, USA, Germany, and India</span>. The total allocated budget was <span class="highlight">$1200</span>. We employed a dual pricing model with <span class="highlight">CPC (Cost Per Click)</span> and <span class="highlight">CPA (Cost Per Acquisition)</span> strategies to maximize ROI and reach specific audience segments in each region.</p>
+    </div>
+
+    <div class="section">
+      <h2>Strategy & Execution</h2>
+      <ul>
+        <li>Localized ad creatives based on user behavior in each geo.</li>
+        <li>Segmentation by device type and traffic quality.</li>
+        <li>Integrated crypto-oriented CTA: “Deposit in Dollars, Cash Out in Doge.”</li>
+        <li>Day-parting for USA and Canada to improve CPA results.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Performance Breakdown by GEO</h2>
+      <div class="graph-container">
+        <canvas id="geoPerformance"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Conversions by Pricing Model</h2>
+      <div class="graph-container medium-graph">
+        <canvas id="modelPerformance"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Conclusion</h2>
+      <p>The campaign delivered high engagement in <span class="highlight">India and USA</span>, with CPC driving the most traffic while CPA provided higher-quality leads. Through aggressive optimization and geo-targeting, Ohplay.club achieved a strong ROI and increased user retention through crypto incentives.</p>
+    </div>
+  </div>
+
+  <script>
+    const geoCtx = document.getElementById('geoPerformance').getContext('2d');
+    new Chart(geoCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Canada', 'USA', 'Germany', 'India'],
+        datasets: [{
+          label: 'Conversions',
+          data: [65, 110, 40, 130],
+          backgroundColor: '#00ffcc'
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { display: false },
+        },
+        scales: {
+          x: {
+            ticks: { color: 'white' },
+            grid: { color: '#333' }
+          },
+          y: {
+            ticks: { color: 'white' },
+            grid: { color: '#333' }
+          }
+        }
+      }
+    });
+
+    const modelCtx = document.getElementById('modelPerformance').getContext('2d');
+    new Chart(modelCtx, {
+      type: 'pie',
+      data: {
+        labels: ['CPC', 'CPA'],
+        datasets: [{
+          label: 'Model Split',
+          data: [750, 450],
+          backgroundColor: ['#00ffcc', '#ffffff']
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NerdWallet Campaign Case Study</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      background-color: #111;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px #222;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .content {
+      padding: 40px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .graph-container {
+      max-width: 700px;
+      margin: 20px auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #222;
+    }
+    .medium-graph {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .highlight {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Campaign Case Study: <span class="highlight">NerdWallet</span></h1>
+    <p>Payday & Consumer Loan Promotions – Budget: $780</p>
+  </header>
+
+  <div class="content">
+    <div class="section">
+      <h2>Campaign Overview</h2>
+      <p>NerdWallet initiated a high-intent lead generation campaign focused on <span class="highlight">Payday and Consumer Loans</span> targeting users across the <span class="highlight">United States</span>. With a total ad spend of <span class="highlight">$780</span>, we used a mixed pricing strategy incorporating both <span class="highlight">CPC (Cost Per Click)</span> and <span class="highlight">CPL (Cost Per Lead)</span> to drive traffic and quality lead submissions.</p>
+    </div>
+
+    <div class="section">
+      <h2>Execution Highlights</h2>
+      <ul>
+        <li>Custom landing pages focused on quick loan approvals and credit support.</li>
+        <li>Mobile-first design with click-to-apply CTA buttons.</li>
+        <li>Time-sensitive ads for weekdays with high demand around salary dates.</li>
+        <li>Keyword targeting: “fast payday loans,” “same-day loans,” and “low interest personal loans.”</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Daily Traffic & Leads Trend</h2>
+      <div class="graph-container">
+        <canvas id="trafficChart"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Performance by Pricing Model</h2>
+      <div class="graph-container medium-graph">
+        <canvas id="pricingModelChart"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Conclusion</h2>
+      <p>The campaign achieved consistent daily traffic through CPC while CPL led to higher-quality leads with a conversion uplift. Overall, the targeted ad strategy and adaptive landing page funnel generated a significant ROI and positioned NerdWallet as a go-to resource for urgent and personalized loan solutions.</p>
+    </div>
+  </div>
+
+  <script>
+    const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+    new Chart(trafficCtx, {
+      type: 'line',
+      data: {
+        labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+        datasets: [
+          {
+            label: 'Clicks',
+            data: [120, 150, 135, 160, 170, 180, 190],
+            borderColor: '#00ffcc',
+            backgroundColor: 'transparent',
+            tension: 0.4
+          },
+          {
+            label: 'Leads',
+            data: [25, 35, 30, 40, 38, 45, 50],
+            borderColor: '#ffffff',
+            backgroundColor: 'transparent',
+            tension: 0.4
+          }
+        ]
+      },
+      options: {
+        plugins: {
+          legend: {
+            labels: { color: 'white' }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: 'white' },
+            grid: { color: '#333' }
+          },
+          y: {
+            ticks: { color: 'white' },
+            grid: { color: '#333' }
+          }
+        }
+      }
+    });
+
+    const pricingCtx = document.getElementById('pricingModelChart').getContext('2d');
+    new Chart(pricingCtx, {
+      type: 'pie',
+      data: {
+        labels: ['CPC', 'CPL'],
+        datasets: [{
+          data: [500, 280],
+          backgroundColor: ['#00ffcc', '#ffffff']
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
